@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@color/primary_dark">
+
+    <!-- Logotipo / Título da Barbearia -->
+    <TextView
+        android:id="@+id/tvAppTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome_title"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        android:textColor="@color/accent_gold"
+        android:letterSpacing="0.05" />
+
+    <TextView
+        android:id="@+id/tvAppSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/welcome_subtitle"
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:textAlignment="center" />
+
+    <!-- Campo Nome -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/text_secondary"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etNomeCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_name"
+            android:inputType="textPersonName"
+            android:textColor="@color/text_primary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Campo Telefone / WhatsApp -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="@color/text_secondary"
+        android:layout_marginBottom="28dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTelefoneCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/enter_phone"
+            android:inputType="phone"
+            android:textColor="@color/text_primary" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Botão Novo Agendamento -->
+    <Button
+        android:id="@+id/btnNovoAgendamento"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/btn_start_booking"
+        android:textColor="@color/primary_dark"
+        android:textStyle="bold"
+        android:backgroundTint="@color/accent_gold"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Botão Meus Agendamentos -->
+    <Button
+        android:id="@+id/btnMeusAgendamentos"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="@string/btn_my_bookings"
+        android:textColor="@color/text_primary"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:backgroundTint="@color/secondary_dark" />
+
+</LinearLayout>

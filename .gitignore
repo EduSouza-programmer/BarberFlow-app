@@ -1,0 +1,23 @@
+# Segredos (nunca versionar)
+.env
+!.env.example
+
+# Configuracao pessoal da maquina do autor
+local/
+
+# Android / Gradle / IDE
+.gradle/
+build/
+.idea/
+*.iml
+local.properties
+*.apk
+*.aab
+captures/
+
+# Maven (simulador em console)
+target/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db

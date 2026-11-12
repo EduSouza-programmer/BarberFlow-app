@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Novo Agendamento"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/accent_gold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Seleção de Serviço -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_service"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/spServicos"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/secondary_dark"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Seleção de Barbeiro -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_barber"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/spBarbeiros"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/secondary_dark"
+            android:layout_marginBottom="20dp" />
+
+        <!-- Seleção de Data -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data do Atendimento:"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnSelecionarData"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escolher Data"
+            android:textColor="@color/text_primary"
+            android:backgroundTint="@color/secondary_dark"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Seleção de Horário -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Horário de Início:"
+            android:textColor="@color/text_primary"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnSelecionarHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Escolher Horário"
+            android:textColor="@color/text_primary"
+            android:backgroundTint="@color/secondary_dark"
+            android:layout_marginBottom="28dp" />
+
+        <!-- Resumo / Feedback de Preço e Horário -->
+        <TextView
+            android:id="@+id/tvResumo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecione as opções acima para ver o resumo"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"
+            android:padding="12dp"
+            android:background="@color/secondary_dark"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Unidade 04 - Tema 1: Acesso a GPS / Mapa da Barbearia -->
+        <Button
+            android:id="@+id/btnVerNoMapa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📍 Ver Localização no GPS / Mapa"
+            android:textColor="@color/text_primary"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:backgroundTint="@color/secondary_dark"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botão Confirmar Agendamento -->
+        <Button
+            android:id="@+id/btnConfirmar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/btn_confirm_booking"
+            android:textColor="@color/primary_dark"
+            android:textStyle="bold"
+            android:backgroundTint="@color/accent_gold" />
+
+    </LinearLayout>
+</ScrollView>

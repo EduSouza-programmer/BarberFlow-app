@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/primary_dark">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Meus Agendamentos"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/accent_gold"
+        android:layout_marginBottom="4dp" />
+
+    <!-- WhatsApp consultado, para o cliente confirmar de quem é a agenda -->
+    <TextView
+        android:id="@+id/tvClienteConsultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="16dp" />
+
+    <ListView
+        android:id="@+id/lvAgendamentos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@color/secondary_dark"
+        android:dividerHeight="2dp" />
+
+    <!-- Exibido automaticamente pela ListView quando a lista está vazia -->
+    <TextView
+        android:id="@+id/tvSemAgendamentos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="24dp"
+        android:text="Você ainda não possui agendamentos.\n\nToque em voltar e use “Novo Agendamento” para marcar seu horário."
+        android:textSize="18sp"
+        android:textColor="@color/text_secondary"
+        android:visibility="gone" />
+
+</LinearLayout>

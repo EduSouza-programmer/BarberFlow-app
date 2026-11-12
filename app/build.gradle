@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.application'
+}
+
+// Dados de conexao com o SQL Server, lidos do .env (o mesmo arquivo usado pelo docker compose).
+// O .env NAO e versionado, entao a senha nunca vai para o repositorio. Veja o README, secao 4.
+def env = new Properties()
+def envFile = rootProject.file('.env')
+if (envFile.exists()) {
+    envFile.eachLine { linha ->
+        def l = linha.trim()
+        if (l && !l.startsWith('#') && l.contains('=')) {
+            def partes = l.split('=', 2)
+            env.setProperty(partes[0].trim(), partes[1].trim().replaceAll(/^["']|["']$/, ''))
+        }
+    }
+}
+// Valor do .env, ou o padrao; escapado para virar uma String Java valida no BuildConfig
+def envProp = { String chave, String padrao ->
+    def valor = env.getProperty(chave) ?: padrao
+    return '"' + valor.replace('\\', '\\\\').replace('"', '\\"') + '"'
+}
+
+android {
+    namespace = 'com.barberflow'
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.barberflow"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // 10.0.2.2 = computador visto de dentro do emulador Android
+        // Porta, banco e usuario sao fixos: os mesmos do docker-compose.yml e dos scripts SQL
+        buildConfigField "String", "DB_HOST", envProp('BARBERFLOW_DB_HOST', '10.0.2.2')
+        buildConfigField "String", "DB_PORT", '"1433"'
+        buildConfigField "String", "DB_NAME", '"BarberFlowDB"'
+        buildConfigField "String", "DB_USER", '"sa"'
+        buildConfigField "String", "DB_PASSWORD", envProp('MSSQL_SA_PASSWORD', '')
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    buildFeatures {
+        buildConfig = true
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    // Unidade 03: Retrofit e Gson para Integração com APIs REST e JSON
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // Driver JDBC compatível com SQL Server (persistência central)
+    implementation 'net.sourceforge.jtds:jtds:1.3.1'
+
+    // Testes unitarios (AgendamentoTest)
+    testImplementation 'junit:junit:4.13.2'
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Permissões de rede e notificações (Unidade 04) -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@android:drawable/sym_def_app_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@android:drawable/sym_def_app_icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.BarberFlow">
+
+        <!-- Tela Principal / Login e Boas-Vindas (Launcher) -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Tela de Criação de Agendamento -->
+        <activity
+            android:name=".AgendamentoActivity"
+            android:label="Novo Agendamento"
+            android:parentActivityName=".MainActivity" />
+
+        <!-- Tela de Consulta de Agendamentos -->
+        <activity
+            android:name=".MeusAgendamentosActivity"
+            android:label="Meus Agendamentos"
+            android:parentActivityName=".MainActivity" />
+
+    </application>
+
+</manifest>

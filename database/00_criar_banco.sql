@@ -1,0 +1,3 @@
+IF DB_ID('BarberFlowDB') IS NULL
+    CREATE DATABASE BarberFlowDB;
+GO

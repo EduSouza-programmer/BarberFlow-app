@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BarberFlow</string>
+    <string name="welcome_title">BarberFlow</string>
+    <string name="welcome_subtitle">Agendamento inteligente para barbearias locais</string>
+    <string name="enter_name">Digite seu nome</string>
+    <string name="enter_phone">Digite seu WhatsApp (ex: 21999998888)</string>
+    <string name="btn_start_booking">Novo Agendamento</string>
+    <string name="btn_my_bookings">Meus Agendamentos</string>
+    <string name="select_service">Selecione o Serviço:</string>
+    <string name="select_barber">Selecione o Barbeiro:</string>
+    <string name="select_date">Selecione a Data e Horário:</string>
+    <string name="btn_confirm_booking">Confirmar Agendamento</string>
+</resources>
